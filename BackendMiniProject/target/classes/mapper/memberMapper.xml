@@ -1,0 +1,43 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper
+  PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+  "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.project.myapp.dao.MemberDAO">
+	<select id="loginCheck" resultType="com.project.myapp.vo.MemberVO">
+		select userid, userpwd, username from member where userid=#{userid} and userpwd=#{userpwd}
+	</select>
+	
+	<insert id="memberInsert">
+		insert into member(userid, userpwd, username, email)
+        values(#{userid}, #{userpwd}, #{username}, #{email})
+	</insert>
+	
+	<select id="idCheck" resultType="Integer">
+		select count(userid) cnt from member
+    	where userid=#{param1}
+	</select>
+	
+	<select id="nameCheck" resultType="Integer">
+		select count(username) cnt from member
+    	where username=#{param1}
+	</select>
+	
+	<select id="pwdCheck" resultType="Integer">
+		select count(userpwd) cnt from member
+		where userpwd=#{param1} and userid=#{param2}
+	</select>
+	
+	<select id="memberSelect" resultType="com.project.myapp.vo.MemberVO">
+		select userid, email, username from member where userid=#{param1}
+	</select>
+	
+	<update id="memberUpdate">
+		update member set username=#{username}, email=#{email}
+    	where userid=#{userid}
+	</update>
+	
+	<update id="pwdUpdate">
+		update member set userpwd=#{userpwd} where userid=#{userid}
+	</update>
+	
+</mapper>

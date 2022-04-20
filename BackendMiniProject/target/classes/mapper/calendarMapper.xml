@@ -1,0 +1,24 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper
+  PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+  "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.project.myapp.dao.CalendarDAO">
+	<insert id="calendarInsert">
+		insert into calendar(userid, cdate, cname, ccontent)
+		values(#{userid}, #{cdate}, #{cname}, #{ccontent})
+	</insert>
+	
+	<select id="calendarAllSelect" resultType="com.project.myapp.vo.CalendarVO">
+		select cno, userid, cdate, cname, ccontent
+		from calendar order by cdate asc
+	</select>
+	
+	<select id="calendarSelect" resultType="com.project.myapp.vo.CalendarVO">
+		select cno, userid, cdate, cname, ccontent
+		from calendar order by cdate asc
+	</select>
+	
+	<delete id="calendarDelete">
+		delete from calendar where cno=#{param1}
+	</delete>
+</mapper>

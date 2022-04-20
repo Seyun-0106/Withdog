@@ -1,0 +1,83 @@
+@charset "UTF-8";
+#category>nav>ul:nth-child(2){
+	background-color: #e8f4ea !important;
+}
+/*카테고리*/
+#category {
+	text-align: center;
+	float: left;
+	position: fixed;
+	top: 210px;
+	left: 10px;
+}
+
+/*본문*/
+#pwdCheck{
+	width:450px;
+	border-radius: 50px;
+	border:2px solid #e8f4ea;
+	margin:0 auto;
+	margin-top:100px;
+}
+#pwdCheck>div{
+	width:250px;
+	margin:0 auto;
+	margin-bottom:20px;
+	margin-top:20px;
+}
+#checkBtn{
+	width: 100px;
+	background-color: #c8e1cc;
+	border-radius: 20px;
+	border-color: #ddd;
+	margin: 0 auto;
+	margin-top:19px;
+	margin-left:75px;
+}
+#infoFrm{
+	width: 450px;
+	height: 400px;
+	margin: 0 auto;
+	border-radius: 50px;
+	border:2px solid #e8f4ea;
+	text-align: left;
+	margin-top:100px;
+	padding-top:40px;
+	padding-left:95px;
+}
+
+label{
+	width: 250px;
+	font-size:14px;
+	text-align:center;
+}
+#userid, #userpwd, #email, #username { /*input*/
+	width: 250px;
+	height: 40px;
+	border: 1px solid #ced4da;
+	text-align: center;
+	font-size: 14px;
+	border-radius: 20px;
+	margin: 0 auto;
+}
+
+#infoFrm>div>input[type=button]{ /*중복 확인*/
+	width: 68px;
+	height: 30px;
+	text-align : center;
+	font-size : 13px;
+	color: #222;
+	background-color : white;
+	border-radius: 20px;
+	border-color : #ddd;
+}
+
+#modifyBtn, #cancelBtn { /*수정, 취소 버튼*/
+	width: 100px;
+	background-color: #c8e1cc;
+	border-radius: 20px;
+	border-color: #ddd;
+	margin: 0 auto;
+	margin-left:15px;
+	margin-top:20px;
+}

@@ -1,0 +1,150 @@
+@charset "UTF-8";
+/*top*/
+ul, li {
+	margin: 0;
+	padding: 0;
+	list-style-type: none;
+}
+#top_menu>div {
+	margin-top: 20px;
+	height: 30px;
+}
+
+#top_menu>div:last-child, #top_search {
+	float: right;
+}
+
+#top_menu>div>a>img {
+	float: left;
+	width: 25px;
+	height: 25px;
+	margin-right: 20px;
+}
+
+#header {
+	width:1024px;
+	margin:0 auto;
+	margin-top: 30px;
+	margin-bottom: 70px;
+}
+
+#header>div {
+	width: 180px;
+	margin: 0 auto;
+}
+
+#header>div>a>img {
+	width: 190px;
+}
+.container{
+	margin:0 auto !important;
+	padding:0 !important;
+}
+
+/*main*/
+#menu {
+	margin: 0 auto;
+	width: 1000px;
+	height: 70px;
+	margin-bottom: 50px;
+	padding-right: 56px;
+	border-radius: 30px;
+	background-color: #e9f3eb;
+}
+
+#menu>nav>ul>li {
+	float: left;
+	width: 180px;
+	height: 50px;
+	line-height: 50px;
+	text-align: center;
+	font-size: 18px;
+	color: #ddd;
+	border-radius: 80px;
+	margin-top: 10px;
+	margin-left: 56px;
+}
+
+#menu>nav {
+	width: 1000px;
+	height: 70px;
+	margin: 0 auto;
+	margin-bottom:40px;
+}
+
+#content {
+	margin: 0 auto;
+	float: center;
+	margin-bottom: 20px;
+	margin-top:30px;
+	border-bottom: 1px solid #c8e1cc;
+}
+
+#content>div {
+	width: 1000px;
+	margin: 0 auto;
+	text-align: center;
+	margin-bottom: 20px;
+}
+
+.carousel-indicators {
+	display: none;
+}
+
+.carousel-inner>div>img {
+	width: 450px;
+}
+
+.carousel-inner {
+	height: 500px;
+}
+
+.carousel-item {
+	margin-top: 20px;
+	margin-bottom: 60px;
+}
+
+.carousel-inner>div>img {
+	width: 450px;
+}
+
+a:link, a:visited {
+	text-decoration: none;
+	color: #222;
+}
+
+a:hover {
+	text-decoration: none;
+	color: #222;
+	font-weight: bold;
+}
+
+#intro>h5>span {
+	font-weight: bold;
+	color: #b8d8be;
+}
+
+#intro {
+	font-size: 15px;
+	margin-bottom: 50px;
+	margin-top: 20px;
+}
+/*하단 아이콘*/
+#imgdiv {
+	margin: 0 auto;
+	margin-bottom: 20px;
+	height: 75px;
+}
+
+#imgdiv>div {
+	width: 1000px;
+	height: 75px;
+	margin: 0 auto;
+	padding-right: 80px;
+}
+
+#imgdiv>div>img {
+	float: left;
+	width: 70px;
+	margin-left: 80px;
+}

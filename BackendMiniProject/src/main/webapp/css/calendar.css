@@ -1,0 +1,154 @@
+@charset "UTF-8";
+#category>nav>ul:nth-child(3){
+	background-color: #e8f4ea !important;
+}
+/*캘린더 css*/
+ul, li {
+	margin: 0;
+	padding: 0;
+	list-style-type: none;
+}
+#calcontent{
+	width:1000px;
+	overflow:auto;
+	margin:0 auto;
+	border-radius:20px;
+	border: 1px solid #ebebeb;
+	margin-bottom:50px;
+	padding-bottom:20px;
+}
+#content3{
+	width:305px;
+	height:40px;
+	margin:0 auto;
+	margin-top:30px;
+}
+/*이미지*/
+#content3>a>img{
+	width:35px;
+	float:left;
+	margin-top:5px;
+}
+/*월,일*/
+#dateTitle{
+	float:left;
+	font-size:30px;
+	font-weight:bold;
+	color:#3c3c3c;
+	margin-left:30px;
+	margin-right:30px;
+}
+/*달력*/
+#calendar {
+	width:564px;
+	height:450px;
+	border-radius:20px;
+	border: 2px solid #F5C236;
+	padding-top:20px;
+	margin:0 auto;
+	margin-top:30px;
+	margin-bottom:20px;
+	overflow:auto;
+}
+#calendar>ul>li:nth-child(7n+1){/*일요일*/
+	color:red;
+}
+#calendar>ul>li:nth-child(7n+7){/*토요일*/
+	color:blue;
+}
+#calendar>ul>li {
+	float:left;
+	width:80px;
+	height:70px;
+	text-align: center;
+	margin:0 auto;
+}
+
+.today {
+	font-weight: bold;
+	background-color: #F5C236;
+}
+
+h2 {
+	text-align: center;
+}
+
+.modal-content{
+	width:380px;
+	height:380px;
+}
+
+#d1{
+	margin-bottom:20px;
+	float:center;
+	background-color: #fbdf97;
+}
+#d1>span{
+	font-size:18px;
+}
+
+#d2{
+	margin:0 auto;
+	text-align: center;
+	padding-bottom:10px;
+}
+
+#d2>input{
+	margin-bottom:10px;
+	width:240px;
+	font-size:14px;
+}
+#addBtn{
+	width:90px;
+	height:35px;
+	background-color: #F5C236;
+	font-size:16px;
+	border-radius: 20px;
+	border-color: #ddd;
+	margin:0 auto;
+	margin-top:10px;
+}
+.close{
+	text-shadow:none;
+}
+#schedule_list{
+	width:600px;
+	margin:0 auto;
+	margin-bottom:10px;
+}
+
+/*일정 보기, 추가 아이콘*/
+#schedule_list>div>button{
+	background-color: transparent;
+	border:none;
+}
+#schedule_list>div>button:first-child{
+	margin-left:10px;
+}
+#schedule_list>div>button>img{
+	width:30px;
+	margin-bottom:10px;
+}
+#delcal{
+	width:34px !important;
+}
+
+/*일정 div*/
+#schedule_view{
+	display:block;
+	height:450px;
+	overflow:auto;
+}
+.cal_span{
+	font-size:14px;
+}
+
+/*관리자 일정 삭제*/
+#schedule_del{
+	display:none;
+	height:200px;
+	overflow:auto;
+}
+#schedule_del>li{
+	background-color:light-blue;
+}

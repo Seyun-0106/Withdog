@@ -1,0 +1,129 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper
+  PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+  "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.project.myapp.dao.TripBoardDAO">
+	<select id="boardList" resultType="com.project.myapp.vo.TripBoardVO">
+		select no, subject, username, date_format(writedate,'%Y-%m-%d') writedate
+		from tripboard
+		<choose>
+			<when test="searchWord!=null">
+				where ${searchKey} like '%${searchWord}%'
+			</when>
+			
+			<when test="area!=null and area !='total'">
+				where
+				<if test="category==null">
+					area=#{area}
+				</if>
+				<if test="category!=null">
+					<foreach item="i" collection="categoryArr" index="index">
+						<if test='index!=categoryArr.length-1'>
+							category like "%${i}%" or	
+						</if>
+						<if test="index==categoryArr.length-1">
+							category like "%${i}%"
+						</if>
+					</foreach>
+					and area=#{area}
+				</if>
+			</when>
+			
+			<when test="area!=null and area =='total'">
+				<if test="category!=null">
+					where
+					<foreach item="i" collection="categoryArr" index="index">
+						<if test="index==categoryArr.length-1">
+							category like "%${i}%"
+						</if>
+						<if test='index!=categoryArr.length-1'>
+							category like "%${i}%" or	
+						</if>			
+					</foreach>	
+				</if>
+			</when>
+		</choose>
+		order by no desc limit ${onePageRecord} offset ${offsetIndex}
+	</select>
+	
+	<select id="totalRecord" resultType="int">
+		select count(no) cnt from tripboard
+		<choose>
+			<when test="searchWord!=null">
+				where ${searchKey} like '%${searchWord}%'
+			</when>
+			
+			<when test="area!=null and area !='total'">
+				where
+				<if test="category==null">
+					area=#{area}
+				</if>
+				<if test="category!=null">
+					<foreach item="i" collection="categoryArr" index="index">
+						<if test='index!=categoryArr.length-1'>
+							category like "%${i}%" or	
+						</if>
+						<if test="index==categoryArr.length-1">
+							category like "%${i}%"
+						</if>
+					</foreach>
+					and area=#{area}
+				</if>
+			</when>
+			
+			<when test="area!=null and area =='total'">
+				<if test="category!=null">
+					where
+					<foreach item="i" collection="categoryArr" index="index">
+						<if test="index==categoryArr.length-1">
+							category like "%${i}%"
+						</if>
+						<if test='index!=categoryArr.length-1'>
+							category like "%${i}%" or	
+						</if>			
+					</foreach>	
+				</if>
+			</when>
+		</choose>
+	</select>
+	
+	<insert id="boardInsert">
+		insert into tripboard(userid, username, subject, area, category, content)
+		values(#{userid}, #{username}, #{subject}, #{area}, #{category}, #{content})
+	</insert>
+	
+	<select id="boardSelect" resultType="com.project.myapp.vo.TripBoardVO">
+		select no, subject, userid, username, writedate, content, area, category, ismodified
+		from tripboard where no=#{param1}
+	</select>
+	
+	<update id="boardUpdate">
+		update tripboard set subject=#{subject},area=#{area},category=#{category}, content=#{content}, writedate=now(), ismodified="수정됨"
+		where no=${no} and userid=#{userid}
+	</update>
+	
+	<delete id="boardDelete">
+		delete from tripboard where no=#{param1} and userid=#{param2}
+	</delete>
+	
+	<select id="commentList" resultType="com.project.myapp.vo.CommentVO">
+		select comno, userid, username, no, content, date_format(writedate,'%Y-%m-%d %H:%i')writedate, ismodified
+		from commentboard where no=#{param1} order by comno asc
+	</select>
+	
+	<insert id="commentInsert">
+		insert into commentboard(no, userid, username, content)
+		values(${no}, #{userid}, #{username}, #{content})
+	</insert>
+	
+	<update id="commentUpdate">
+		update commentboard set content=#{content},  writedate=now(), ismodified="수정됨"
+		where comno=${comno} and userid=#{userid}
+	</update>
+	
+	<delete id="commentDelete">
+		delete from commentboard where comno=${param1} and userid=#{param2}
+	</delete>
+	
+	
+</mapper>

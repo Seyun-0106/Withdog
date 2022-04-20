@@ -1,0 +1,60 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper
+  PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+  "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.project.myapp.dao.FreeBoardDAO">
+	<select id="boardList" resultType="com.project.myapp.vo.FreeBoardVO">
+		select fno, subject, username, date_format(writedate,'%Y-%m-%d') writedate
+		from freeboard 
+		<if test="searchWord!=null">
+			where ${searchKey} like '%${searchWord}%'
+		</if>
+		order by fno desc limit ${onePageRecord} offset ${offsetIndex}
+	</select>
+	
+	<select id="totalRecord" resultType="int">
+		select count(fno) cnt from freeboard
+		<if test="searchWord!=null">
+			where ${searchKey} like '%${searchWord}%'
+		</if>
+	</select>
+	
+	<insert id="boardInsert">
+		insert into freeboard(userid, username, subject, content)
+		values(#{userid}, #{username}, #{subject}, #{content})
+	</insert>
+	
+	<select id="boardSelect" resultType="com.project.myapp.vo.FreeBoardVO">
+		select fno, subject, userid, username, writedate, content, ismodified
+		from freeboard where fno=#{param1}
+	</select>
+	
+	<update id="boardUpdate">
+		update freeboard set subject=#{subject}, content=#{content}, writedate=now(), ismodified="수정됨"
+		where fno=${fno} and userid=#{userid}
+	</update>
+	
+	<delete id="boardDelete">
+		delete from freeboard where fno=#{param1} and userid=#{param2}
+	</delete>
+	
+	<select id="commentList" resultType="com.project.myapp.vo.FreeCommentVO">
+		select fcomno, userid, username, fno, content, date_format(writedate,'%Y-%m-%d%H:%i')writedate, ismodified
+		from freecomment where fno=#{param1} order by fcomno asc
+	</select>
+	
+	<insert id="commentInsert">
+		insert into freecomment(fno, userid, username, content)
+		values(${fno}, #{userid}, #{username}, #{content})
+	</insert>
+	
+	<update id="commentUpdate">
+		update freecomment set content=#{content},  writedate=now(), ismodified="수정됨"
+		where fcomno=${fcomno} and userid=#{userid}
+	</update>
+	
+	<delete id="commentDelete">
+		delete from freecomment where fcomno=${param1} and userid=#{param2}
+	</delete>
+	
+</mapper>

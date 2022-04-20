@@ -1,0 +1,32 @@
+@charset "UTF-8";
+
+#writeform {
+	width:850px;
+	margin: 0 auto;
+}
+
+#title{
+	width:800px;	
+	background-color: none;
+}
+#selectArea { /*검색 select*/
+	width: 90px;
+	height: 25px;
+	font-size: 14px;
+	text-align: center;
+}
+#title, #selectArea, #cafe{
+	margin-left:10px;
+	margin-bottom: 10px;
+}
+/*등록, 취소 버튼*/
+input[type=submit], input[type=button]{
+	background-color: #e8f4ea;
+	font-size:15px;
+	width:100px;
+	border-radius: 20px;
+	border-color:#ddd;
+	float:right;
+	margin-top:10px;
+	margin-right:10px;
+}

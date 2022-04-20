@@ -1,0 +1,164 @@
+@charset "UTF-8";
+#category>nav>ul:nth-child(2){
+	background-color: #e8f4ea !important;
+}
+#content2 {
+	background-color: #e8f4ea;
+	border-radius: 30px;
+	width: 870px;
+	height: 90px;
+	margin: 0 auto;
+	margin-top: 100px;
+	margin-bottom: 20px;
+}
+/*체크*/
+#checkList {
+	width: 600px;
+	height: 80px;
+	margin: 0 auto;
+	float: left;
+	margin-right: 35px;
+	margin-left: 30px;
+}
+
+#checkList>input[type=checkbox] {
+	display: none;
+}
+
+#checkList>input[type=button] { /*버튼*/
+	width: 110px;
+	height: 40px;
+	border-radius: 20px;
+	background-color: white;
+	margin-left: 35px;
+	margin-top: 25px;
+	border:none;
+}
+
+#checkList>input[type=button]:hover {
+	background-color: #fce478!Important;
+	transition-duration: 400ms;
+	font-weight: bold;
+}
+
+/*지역선택, 검색버튼 div*/
+#selection {
+	width: 110px;
+	text-align: center;
+	margin-top: 11px;
+	margin-left: 5px;
+	float: left;
+}
+
+#selectArea { /*검색 select*/
+	width: 120px;
+	height: 25px;
+	margin-bottom: 8px;
+	margin-top:4px;
+	margin-left:5px;
+	font-size: 14px;
+	text-align: center;
+}
+
+#selection>input[type=submit] {
+	width: 130px;
+	height: 28px;
+	font-size: 14px;
+	border: none;
+	background-color: #d6e9d9;
+	border-radius: 20px;
+}
+
+#selection>input[type=submit]:hover{
+	font-weight: bold;
+}
+
+/*게시판 제목, 내용, 작성자 검색*/
+#searchFrm{
+	float:right;
+	margin-bottom:30px;
+}
+#searchKey{
+	float:left;
+	width:65px;
+	height:25px;
+	font-size:14px;
+	text-align: center;
+}
+
+#searchWord {
+	font-size: 14px;
+	width: 200px;
+	height: 25px;
+	float: left;
+	margin-right: 5px;
+}
+
+#searchBtn {
+	width: 45px;
+	height: 25px;
+	font-size: 14px;
+	text-align: center;
+	background-color: #e8f4ea;
+	border:none;
+	float: left;
+}
+
+/*게시판*/
+#list_board {
+	width: 850px !Important;
+	margin: 0 auto;
+	margin-bottom:50px;
+}
+
+#list_board>table>thead>tr>th {
+	text-align: center;
+	white-space: nowrap;
+}
+
+#boardList>tr>td:not(:nth-child(2)) {
+	text-align: center;
+}
+
+#searchFrm {
+	white-space: nowrap;
+}
+
+.titlecut:hover {
+	text-decoration: underline;
+	font-weight: bold;
+}
+
+#list_board>div {
+	float: right;
+	margin-bottom: 13px;
+}
+
+#list_board>table {
+	width: 800px;
+}
+
+.table {
+	width: 850px !Important;
+}
+
+.titlecut { /*제목 overflow 설정*/
+	white-space: nowrap; /*줄바꿈X*/
+	overflow: hidden;
+	text-overflow: ellipsis;
+}
+
+#writeBtn {
+	width: 80px;
+	height: 28px;
+	font-size: 15px;
+	background-color: #fce478;
+	border-color: #efefef;
+	border-radius: 20px;
+	float: right;
+}
+
+.pagination>.active>a {
+	background-color: #c8e1cc !Important;
+	border-color: #ddd !Important;
+}

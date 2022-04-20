@@ -1,0 +1,99 @@
+@charset "UTF-8";
+
+#hidden_category{
+	display:block;
+}
+#hidden_category>ul{
+	background-color: #e8f4ea !important;
+}
+
+/*검색*/
+#searchFrm{
+	float:right;
+	margin-bottom:30px;
+}
+#searchKey{
+	float:left;
+	width:65px;
+	height:25px;
+	font-size:14px;
+	text-align: center;
+}
+
+#searchWord {
+	font-size: 14px;
+	width: 200px;
+	height: 25px;
+	float: left;
+	margin-right: 5px;
+}
+
+#searchBtn {
+	width: 45px;
+	height: 25px;
+	font-size: 14px;
+	text-align: center;
+	background-color: #e8f4ea;
+	border-color: #efefef;
+	float: left;
+}
+
+/*게시판*/
+#list_board {
+	width: 850px !Important;
+	margin: 0 auto;
+	margin-top:150px;
+}
+
+#list_board>table>thead>tr>th {
+	text-align: center;
+	white-space: nowrap;
+}
+
+#boardList>tr>td:not(:nth-child(2)) {
+	text-align: center;
+}
+
+#searchList {
+	white-space: nowrap;
+}
+
+.titlecut:hover {
+	text-decoration: underline;
+	font-weight: bold;
+}
+
+#list_board>div {
+	float: right;
+	margin-bottom: 13px;
+}
+
+#list_board>table {
+	width: 800px;
+}
+
+.table {
+	width: 850px !Important;
+}
+
+.titlecut { /*제목 overflow 설정*/
+	white-space: nowrap; /*줄바꿈X*/
+	overflow: hidden;
+	text-overflow: ellipsis;
+}
+
+
+#writeBtn {
+	width: 80px;
+	height: 28px;
+	font-size: 15px;
+	background-color: #fce478;
+	border-color: #efefef;
+	border-radius: 20px;
+	float: right;
+}
+
+.pagination>.active>a {
+	background-color: #c8e1cc !Important;
+	border-color: #ddd !Important;
+}
